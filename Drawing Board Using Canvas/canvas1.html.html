@@ -1,0 +1,295 @@
+<html> 
+  
+  <head> 
+  <title>Canvas</title>
+   
+    <meta name="viewport" content="width=device-width"/>
+<style type="text/css">
+  @media screen and (max-width: 600px)
+  {
+    
+    H2
+    {
+      
+      font-size: 10px;
+    }
+    img
+
+  {
+    display: none;
+  }
+ 
+
+  }
+</style>
+  </head>
+
+    
+  <body>
+    <header style="background-color:#4A8BF5;padding:1%;"><CENTER><img style="vertical-align: text-top; margin-right: 2%;" id="top" src="canvas.gif" width="50px" /><H2 style="display: inline;">YOUR VERY OWN DRAWING BOARD!!!</H2></CENTER>
+      <center>
+       <button id="br" onclick="hide('br'); show('heading'); show('colors1'); show('colors2');show('colors3');">Pick Another Brush Color</button>
+       <h3 id="heading" style="display: none;">Colors:</h3>
+       <button id="colors1" style="background-color:red; font-size: 1%; color: red;height: 3%; cursor: pointer; display: none; " onclick="changeColor('red')">red</button>
+       <button id="colors2" style="background-color:blue; font-size: 1%;color: blue;  height: 3%; cursor: pointer; display: none;" onclick="changeColor('blue')">gre</button>
+       <button id="colors3" style="background-color:green;font-size: 1%;color: green; height: 3%; cursor: pointer; display: none;" onclick="changeColor('green')">blu</button>
+
+       <hr style="width: 1px; height: 30px; display: inline; margin: 1%; color: black;">
+
+        <button id="bg" onclick="hide('bg'); show('headin'); show('colors11'); show('colors22');show('colors33');show('colors44'); ">Pick Another Brush Shape</button>
+        <h3 id="headin" style="display: none;">Shapes:</h3>
+            <button id="colors33" style="  height: 5%; background-color:transparent; border: 2px dotted white;cursor: pointer; display: none;" onclick="changeS('circle')">Circle</button>
+         <button id="colors11" style="  height: 5%;background-color:transparent; border: 2px dotted white; cursor: pointer; display: none;" onclick="changeS('square')">Square</button>
+         <button id="colors22" style="  height: 5%;background-color:transparent; border: 2px dotted white; cursor: pointer; display: none;" onclick="changeS('rect')">Rectangle</button>
+      
+         
+        
+  
+<hr style="width: 1px; height: 30px; display: inline; margin: 1%; color: black;">
+
+        <h3 style="display: inline;">Styles:</h3>
+         <button style="  height: 5%; cursor: pointer; " onclick="changeF('fill')">FILL</button>
+         <button style="  height: 5%; cursor: pointer; " onclick="changeF('stroke')">STROKE</button>
+         
+
+       
+       
+       <hr style="width: 1px; height: 30px; display: inline; margin: 1%; color: black;">
+
+         <button id="wd" onclick="hide('wd'); show('headi'); show('colors111'); show('colors222');show('colors333');">Pick a Brush Width</button>
+         <h3 id="headi" style="display: none;">Brush Width:</h3>
+         <button id="colors111" style=" height: 5%;background-color:transparent; border: 2px dotted white; cursor: pointer; display: none; " onclick="changeW(5)">Small</button>
+         <button id="colors222" style=" height: 5%; background-color:transparent; border: 2px dotted white;cursor: pointer; display: none;" onclick="changeW(20)">Medium</button>
+         <button id="colors333" style=" height: 5%; background-color:transparent; border: 2px dotted white;cursor: pointer; display: none;" onclick="changeW(45)">Large</button>
+       
+        <br><br>
+
+         <button onclick="clearnow()">CLEAR</button>
+
+        <hr style="width: 1px; height: 30px; display: inline; margin: 1%; color: black;">
+
+         <button id="br" onclick="animat(); show('skip')">PLAYING WITH CANVAS</button>
+         <button id="skip" style="display: none;" onClick="window.location.reload()">Reload Page to exit animation>>></button>
+     </center>
+    </header> 
+
+        <canvas id="c" style="border: 2px solid black;">"Please use Google Chrome!!!</canvas> 
+     
+       
+      
+    <script> 
+
+      function show(target) {
+      document.getElementById(target).style.display = 'inline';
+      }
+      function hide(target) {
+      document.getElementById(target).style.display = 'none';
+     }
+
+          var canvas = document.getElementById("c");
+
+          canvas.width = window.innerWidth;
+          canvas.height = 400;
+         
+          var c = canvas.getContext("2d");
+
+
+         
+          var small1=10;
+          var shape='circle';
+          var rect1=25;
+          cir=15;
+          var color;
+          stroke=false;
+
+          function animat()
+          {
+
+          var posX=0, posY=100;
+          var count=0;
+           var col="blue";
+           var bottom=canvas.height;
+          
+         c.font = "30px Arial";
+c.fillText("The Two Layer Stacking Balls...Refresh Page to Exit",220,50);
+        
+
+          setInterval(function()
+          {
+                  posY+=1;
+                 
+                  if(posY==bottom)
+                  {
+                  posX+=200;
+                  posY-=bottom;
+                  
+                  }
+                
+                 c.fillStyle="rgba(0,0,0,0.01)";
+                  c.fillRect(0,0,canvas.width,canvas.height);
+                  c.fillStyle=col;
+                  c.beginPath();
+                  c.arc(posX,posY,100,0,2*Math.PI);
+                  c.fill();
+                  c.strokeStyle="white";
+                  c.stroke();
+
+                  if(posX>=canvas.width){
+                    
+                    count+=15;
+                    posY=100-count;
+                    posX=0+count;
+                    
+                    col="red";
+                    bottom-=200;
+
+                    if(bottom<=0)
+                    {
+                    col="blue";
+                    posX=0;
+                    posY=100;
+
+                    bottom=canvas.height;
+
+                    }
+                  }
+                  
+
+                  
+          },1);
+
+        }
+      
+     
+     function changeS(shape1)
+     {
+      shape=shape1;
+     }
+
+
+          function clearnow()
+          {
+           
+        c.clearRect(0, 0, canvas.width, canvas.height);
+          
+          }
+
+          function changeW(size)
+          {
+            small1=size;
+            rect1=size*4;
+            cir=size;
+
+
+          }
+
+          function changeColor(color1)
+            { 
+            c.fillStyle=color1;
+            color=color1;
+            }
+           
+           function drawSquare(x, y) 
+            {
+              if(shape=='square')
+              {
+                  
+                  if(stroke==true)
+                  {
+
+                  c.rect(x, y, small1, small1 ); 
+                  c.strokeStyle=color;
+                  c.stroke();
+                  }
+                  else
+                  {
+                  c.fillRect(x, y, small1, small1 ); 
+                  }
+
+              }
+              if(shape=='rect') 
+              {
+                if(stroke==true)
+                  {
+                  c.rect(x, y, small1, rect1 ); 
+                  c.strokeStyle=color;
+                  c.stroke();
+                  }
+                  else
+                  {
+                c.fillRect(x, y, small1, rect1 ); 
+              }
+              }
+              if(shape=='circle')
+              {
+                if(stroke==true)
+                {
+                  c.beginPath();
+                  c.arc(x, y,cir,0,2*Math.PI);
+                  c.strokeStyle=color;
+                  c.stroke();
+                }
+                else
+                {
+                  c.beginPath();
+                  c.arc(x, y,cir,0,2*Math.PI);
+                  c.fillStyle = color;
+                  c.fill();
+                  c.stroke();
+                }
+              } 
+               if(shape=='img')
+              {
+                  
+               var img = document.getElementById("top");
+               c.drawImage(img, x, y);
+                    
+                
+               }
+            }
+
+
+            function changeF(val) 
+            {
+              if(val=='fill')
+                stroke=false;
+             if(val=='stroke')
+                stroke=true;
+            }
+
+          
+            
+            document.ontouchmove = function(e) 
+            {
+              e.preventDefault();
+              for (var n=0; n<e.touches.length; n++) 
+              {
+
+                drawSquare(e.touches[n].pageX-canvas.offsetLeft, e.touches[n].pageY-canvas.offsetTop);
+              
+              }
+            }
+
+               document.onmousedown = function(e)
+                 {
+                   document.isDrawing = true;
+                  }  
+
+               document.onmouseup = function(e)
+                  {
+                   document.isDrawing = false;
+                  }            
+             
+              document.onmousemove = function(e) 
+              {
+                    if (!document.isDrawing) 
+                    {
+                    return;
+                    }
+
+                drawSquare(e.clientX-canvas.offsetLeft, e.clientY-canvas.offsetTop); 
+              }
+           
+      </script> 
+  </body> 
+</html>

@@ -1,0 +1,595 @@
+@import "compass";
+@import "compass/reset";
+
+$boxh:25%;
+$boxw:95%;
+$tab1:#206CA8;
+$tab2:#2C4E86;
+$fc:black;
+
+
+
+@keyframes slide {
+  0%   { width: 0%; } 
+  60%  { width: 50%; }
+  70%  { width: 80%; }
+  100% { width: 100%; }
+}
+
+
+@media screen and (max-width:650px)
+{
+	#nav2
+	{
+	display:none;
+	ul
+		{display:none;
+			li
+			{
+			display:none;
+			}
+		}
+	}
+	nav
+	{
+	display:block;
+	position:fixed;
+	left:0%;
+	top:0%;
+
+		img
+			{
+			cursor:pointer;
+			}
+			
+		#open
+		{
+			display:none;
+			li
+			{
+			
+			height:50px;
+			text-align:center;
+			background:url('back1.jpg');
+			
+			@include box-shadow(black 2px 2px 10px);
+			
+			
+			color:white;
+			padding-top:30px;
+			font-size:200%;
+			width: 200px;
+			}
+			
+		}	
+	}
+
+	
+	section
+	{	
+		.box
+		{
+		width:100%;
+
+		}
+
+		#about
+		{
+						
+			.together
+			{	
+				
+				display:flex;
+				height:30%;
+				flex-flow:column !important;
+				#i
+				{
+				padding-left:60%;
+				
+							
+				}
+				
+			}
+			
+			#lower2
+			{
+			
+			display:flex;
+			flex-flow:column !important;
+				#tag
+				{
+				flex:1;
+				}
+				#skills	
+				{
+				flex:1;
+				}
+			}
+		}
+
+		#work
+		{
+			.breaker
+			{
+			display:flex;
+			flex-flow:column !important;
+			
+				.breaker1
+				{
+				flex:3;
+				order:2;
+				}
+				img
+				{
+				flex:1;
+				order:1;
+				}
+			}
+
+		}
+
+		#contact
+			{
+			
+			img
+			{
+			width:100%;
+			}
+			.imga
+			{
+				
+				font-size:0% !important;
+				
+				
+		
+				
+			}
+			
+			@include transition-property(width);
+				.imga:hover
+				{
+				@include box-shadow(red 2px 2px 10px);
+				width:57% !important;
+				img
+				{
+				width:15%;
+				}
+				color:white;
+				font-size:100% !important;
+				}
+			}
+			
+	
+	}
+}
+
+
+body
+{
+	width:100%;
+	min-width:200px;
+	
+	
+}
+
+header
+{
+	font-size:300%;
+	text-align:center;
+	margin-top:6%;
+	color:black;
+	font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+	}
+	
+	
+	nav
+	{
+	
+	position:fixed;
+	left:0%;
+	top:0%;
+
+		img
+			{
+			cursor:pointer;
+			}
+			
+		#open
+		{
+			display:none;
+			li
+			{
+			height:50px;
+			text-align:center;
+			background:url('back1.jpg');
+			
+			@include box-shadow(black 2px 2px 10px);
+			
+			
+			color:white;
+			padding-top:30px;
+			font-size:200%;
+			width: 200px;
+			}
+		}	
+	}
+
+
+#nav2
+	{
+		
+		background:url('back1.jpg');
+		position:fixed;
+		top:0%;
+		width:100%;
+		color:white;
+		li
+		{
+			display:inline-block;
+			margin:1%;
+			padding:1%;
+			padding-right:1%;
+			padding-left:1%;
+			color:white;
+			font-size:120%;
+		}
+		li:hover
+		{
+			animation:fade 0.5 ease-in;
+			border:3px solid white;
+		}
+	}
+
+section
+{
+	min-width:200px;
+		.box
+		{	
+			width:85%;
+			margin-left:1%;
+			background:url('back.jpg');
+			height:$boxh;
+			width:$boxw;
+			@include box-shadow(black 2px 2px 10px);
+			@include border-corner-radius(top, right, 25px);
+			@include border-corner-radius(top, left, 25px);
+			@include border-corner-radius(bottom, left, 25px);
+			@include border-corner-radius(bottom, right, 25px);
+			padding:15px;	
+			margin-bottom:2%;
+			color:$fc;
+
+		}
+
+		#about
+		{	
+		display:flex;
+		flex-flow:column;
+			.together
+			{
+				display:flex;
+				flex-flow:row;
+				flex:2;
+				order:1;
+				#i
+				{
+				flex:1;
+				padding-right:3%;
+				
+
+				}
+				#summary
+				{
+					font-size:130%;
+					
+					flex:3 !important;
+					
+					h3
+					{
+					font-style:italic;
+					}
+					button
+					{
+					display:none;
+					}
+					#more1,#more2
+					{
+					display:block;
+					}
+				}	
+			}	
+			
+			blockquote:before, blockquote:after
+				{
+				content:'"';
+				font-family:"Arial Narrow", Arial, Helvetica, sans-serif;
+				}
+
+				blockquote
+				{
+				text-align:center;
+				padding:3%;
+
+				
+				font-size:150%;
+				font-style:oblique;
+				
+				flex:2;
+				order:3;
+				}
+			
+			#side
+			{
+			order:2;
+			flex:1;		
+			}
+			#lower2
+			{
+			order:4;
+			flex:3;
+				
+				display:flex;
+				flex-flow:row;
+				#tag
+				{
+				flex:1;
+				}
+				#skills
+				{
+				flex:1;
+				#pic:hover
+				{
+				   
+				   transform: rotateY(45deg);
+				}
+
+				progress {
+						width: 300px;
+						height: 16x;
+						margin-left:2%;
+						display: inline-block;
+						-webkit-appearance: none;
+						
+					    }	
+
+				progress::-webkit-progress-bar {
+					background: grey;
+					border-radius: 50px;
+					padding: 2px;
+					box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+					}
+
+
+				progress::-webkit-progress-value {
+					border-radius: 50px;
+					box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+					background:blue;
+	
+	
+					}
+
+
+
+	
+				}
+				
+			}
+
+			#side
+			{	
+				flex:3;	
+				display:flex;
+				flex-flow:row-wrap;
+				float:left;
+
+				.button
+				{
+				display:inline-block;
+				@include background-image(linear-gradient(to bottom right, $tab1, $tab2));
+				color:$fc;
+				@include box-shadow(black 2px 2px 10px);
+				@include border-corner-radius(top, right, 15px);
+				@include border-corner-radius(top, left, 15px);
+				@include border-corner-radius(bottom, left, 15px);
+				@include border-corner-radius(bottom, right, 15px);
+				padding:15px;
+				margin:15px;
+				width:5%;
+				text-align:center;
+				font-size:120%;
+				}
+				#button1
+					{flex:1;}
+				#button2
+					{flex:1;}
+				
+			}
+
+			.innerbox
+			{
+			flex:4;
+			text-align:center;
+			
+			width:25;
+			@include box-shadow(black 2px 2px 10px);
+			@include border-corner-radius(top, right, 15px);
+			@include border-corner-radius(top, left, 15px);
+			@include border-corner-radius(bottom, left, 15px);
+			@include border-corner-radius(bottom, right, 15px);
+			padding:20px;
+			margin:10px;
+			text-align:center;
+			font-size:150%;
+			color:$fc;	
+			}
+
+		}
+
+		#project
+		{	
+			text-align:center;
+			font-size:120%;
+			img
+			{
+			margin-top:2%;
+			}
+			.arrow:hover
+			{
+			width:2.5%;
+			}
+			#one
+			{
+				#abc
+				{
+				width:40%;
+				}
+				li
+				{
+				display:inline;
+				}
+			}
+
+		}
+
+		#work
+		{
+			.breaker
+			{
+			display:flex;
+			flex-flow:row;
+			
+				.breaker1
+				{
+				flex:3;
+				order:1;
+				}
+				img
+				{
+				flex:1;
+				order:2;
+				}
+	
+			}
+			h4
+			{
+			font-weight:bold;
+			}
+			h3
+			{
+			color:#00008B;
+			font-weight:bold;
+			}
+		}
+
+		#achievement
+		{
+			font-size:130%;
+				input {
+				  display: none;
+				}
+
+				.radio {
+					width: 20px;
+					height: 20px;
+					
+					margin: 7px 7px 0 0;
+					padding: 0;
+					text-align: center;
+					
+					text-decoration: none;
+					font-size: 14px;
+					color: #000;
+					font-weight: 900;
+					cursor: pointer;
+					border: 2px solid #000;
+					border-radius: 50%;
+					display: inline-block;
+				  transition: background-color .4s;
+				}
+
+				.radio:hover {
+				  background-color: #727272;
+				}
+
+				input:checked ~ .radio {
+					color: #FFF;
+					background-color: #000;
+				  opacity: 1;
+				}
+
+				.img-box {
+				  width: 300px;
+				  height: 200px;
+				  margin: 20px auto;
+				  
+				  overflow: hidden;
+				}
+
+				#one, #two, #three {
+				  opacity: 0;
+				  -webkit-transform: translate(0,30px);
+				  transition-property: -webkit-transform, opacity;
+				  transition-duration: .5s;
+				  position: absolute;
+				}
+
+				#img-1:checked ~ .img-box #one,
+				#img-2:checked ~ .img-box #two,
+				#img-3:checked ~ .img-box #three {
+				  opacity: 1;
+				  -webkit-transform: translate(0,0);
+				}
+
+				#img-1:checked ~ .nav label #dot-1.radio,
+				#img-2:checked ~ .nav label #dot-2.radio,
+				#img-3:checked ~ .nav label #dot-3.radio {
+				  color: #FFF;
+				  background-color: #000;
+				}
+
+				.nav {
+				  width: 120px;
+				  margin: 0 auto;
+				}
+
+			}
+
+
+			#contact
+			{
+			height:30%;
+			img
+			{
+			width:100%;
+			}
+			.imga
+			{
+				
+				text-align:center;
+				background:url('back1.jpg');
+				padding:0.5%;
+				width:10%;
+				color:black;
+				@include box-shadow(black 2px 2px 10px);
+				@include transition-property(width);
+				font-size:0%;
+				
+				
+		
+				
+			}
+			
+			@include transition-property(width);
+			.imga:hover
+			{
+			@include box-shadow(red 2px 2px 10px);
+			width:50%;
+			img
+			{
+			width:20%;
+			}
+			color:white;
+			font-size:200%;
+			}
+				
+			}}

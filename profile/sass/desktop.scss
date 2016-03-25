@@ -1,0 +1,171 @@
+@import "compass";
+@import "compass/reset";
+
+$boxh:30%;
+$boxw:95%;
+
+body
+{
+	
+}
+header
+{
+	font-size:290%;
+	text-align:center;
+	margin:1%;
+}
+
+#open
+{
+	img
+	{
+		cursor:pointer;
+	}
+	nav
+	{
+		@include background-image(linear-gradient(to bottom right, grey, blue));	
+		padding:1%;
+		padding-left:6%;
+		li
+		{
+		
+		padding:3%;
+		font-size:180%;	
+		}
+	}
+}
+#nav2
+{	
+	position:fixed;
+	left:1%;
+	top:20%;
+	
+	li
+	{
+	text-decoration:none;
+	width:30px;
+	height:80px;
+	text-align:center;
+	@include box-shadow(black 2px 2px 10px);
+	@include transition-property(width);
+	}
+	
+	
+	li:nth-child(even)
+	{
+	background-color:#3333ff;
+	color:#3333ff;	
+
+	}
+
+	li:nth-child(odd)
+	{
+	background-color:#000066;
+	color:#000066;	
+	}
+
+	li:hover
+	{
+	color:white;
+	padding-top:30px;
+	font-size:250%;
+	width: 300px;
+	}
+}
+
+section
+{
+	min-width:200px;
+	margin-left:4%;
+	.box
+	{
+		display:flex;
+		flex-flow:column;
+		@include background-image(linear-gradient(to bottom right, white, purple));	
+		opacity:40%;
+		margin:1%;
+		height:$boxh;
+		width:$boxw;
+		@include box-shadow(black 2px 2px 10px);
+		@include border-corner-radius(top, right, 15px);
+		@include border-corner-radius(top, left, 15px);
+		@include border-corner-radius(bottom, left, 15px);
+		@include border-corner-radius(bottom, right, 15px);
+		padding:15px;
+
+		blockquote:before, blockquote:after
+		{
+		content:'"';
+		font-family:"Arial Narrow", Arial, Helvetica, sans-serif;
+		}
+
+		blockquote
+		{
+		flex:3;
+		position:absolute;
+		top:25%;
+		left:40%;
+		float:right;
+		font-size:250%;
+		font-color:#0D0F54;
+		font-style:oblique;
+		}
+
+		#summary
+		{
+		flex:5;
+		font-color:#540D33;
+		position:absolute;
+		top:50%;
+		left:40%;
+		float:right;
+		font-size:180%;
+		}
+
+		.button
+		{
+		flex:1;
+		display:flex;
+		flex-flow:row-wrap;
+		display:inline-block;
+		@include background-image(linear-gradient(to bottom right, white, purple));	
+		width:10%;
+		@include box-shadow(black 2px 2px 10px);
+		@include border-corner-radius(top, right, 15px);
+		@include border-corner-radius(top, left, 15px);
+		@include border-corner-radius(bottom, left, 15px);
+		@include border-corner-radius(bottom, right, 15px);
+		padding:20px;
+		margin:15px;
+		text-align:center;
+		font-size:150%;
+		color:#0D0F54;
+			#button1
+			{flex:1;}
+			#button2
+			{flex:1;}
+		}
+
+		.innerbox
+		{
+		flex:2;
+		display:inline-block;
+		@include background-image(linear-gradient(to bottom right, white, purple));	
+		width:25%;
+		@include box-shadow(black 2px 2px 10px);
+		@include border-corner-radius(top, right, 15px);
+		@include border-corner-radius(top, left, 15px);
+		@include border-corner-radius(bottom, left, 15px);
+		@include border-corner-radius(bottom, right, 15px);
+		padding:20px;
+		margin:15px;
+		text-align:center;
+		font-size:150%;
+		color:#0D0F54;
+		}
+
+
+	}
+	
+	
+}

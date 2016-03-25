@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Aditi's Portfolio</title>
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0">   
+	<link rel="stylesheet" type="text/css" href="stylesheets/portfolio.css">
+	 <link rel="shortcut icon" type="image/x-icon" href="user6.ico" />
+
+	<script type="text/javascript">
+
+
+		 function change(option) 
+		    {
+                 var chg = document.getElementById("abc");
+                if(option==1)
+                {
+                    chg.src="proj1_1.png";
+                }
+                if(option==2)
+                {
+                     chg.src="proj1_2.png";
+                }
+                if(option==3)
+                {
+                 chg.src="proj1_3.png";
+                } 
+
+            }
+
+        function changeImage(img){
+                   document.getElementByClass('contact').src=img;
+                }
+
+            
+		function show (toBlock)
+		{
+    		setDisplay(toBlock, 'block');
+    	}
+
+	  	function hide (toNone) 
+	  	{
+	  		setDisplay(toNone, 'none');
+		}	
+				        	
+    	function setDisplay (target, str) 
+    	{
+    	document.getElementById(target).style.display = str;
+  		}
+
+  		function toggle(target)
+	  		{
+	  			var targ = document.getElementById(target);  
+	  			var isVis = targ.style.display=='block';
+	     		 targ.style.display = isVis?'none':'block';
+	    		return false;
+			}
+
+	</script>
+</head>
+<body>
+<header>
+Aditi Thakkar's
+	
+	Portfolio
+</header><br>
+<nav>
+	<img onclick="toggle('open')" src="sandwich.png"/ width="15%">
+
+	<div id="open">
+	<ul>
+		<li onclick="parent.location='#about'">About</li>
+		<li onclick="parent.location='#project'">Projects</li>
+		<li onclick="parent.location='#achievement'">Achievements</li>
+		<li onclick="parent.location='#work'">Work Ex</li>
+		<li onclick="parent.location='#contact'">Contact</li>
+	</ul>
+	</div>
+</nav>
+<div id="nav2" >
+	
+	<ul><img style="margin-left: 2%;" src="user6.ico" width="2%"> <div style="font-family: 'Century Gothic', CenturyGothic, AppleGothic, sans-serif; display: inline;"> Aditi's Portfolio</div>
+		<li onclick="parent.location='#about'">ABOUT</li>
+		<li onclick="parent.location='#project'" >PROJECTS</li>
+		<li onclick="parent.location='#achievement'" >ACHIEVEMENTS</li>
+		<li onclick="parent.location='#work'" >WORK EXPERIENCE</li>
+		<li onclick="parent.location='#contact'" >CONTACT</li>
+	</ul>
+
+</div>
+
+<section>
+	<div class="box" id="about">
+	<blockquote >
+				Ample of perseverence & determination deliver sweet & stable fruits. So do the best of what you can & the results will follow!
+			</blockquote>
+		<div class="together">	
+			<div id="i"><img src="profil.png" width="100%"/></div>
+			<div id="summary">
+				<h3>Summary:<hr></h3> Highly focused and committed individual, possessing excellent communication and technical skills, coupled with strong curricular and co-curricular background, and yearning to enhance knowledge and attain a position of eminence through hard work.
+				<br><br>
+				<h3>Education:<hr></h3> Master of Science in Computer Science<br>Pace University, Seidenberg School of CSIS, New York, NY
+				<br>Bachelor of Engineering, Computer Engineering<br>Rajiv Gandhi Institute of Technology, Mumbai, India	
+			</div>	
+		</div>
+		<div id="side">
+				<div id="button1" class="button" style="width: 5%;">
+					<a href="AditiThakkar_Resume.pdf" target="_blank">Resume</a>
+				</div>
+				<div id="button2" class="button">
+					<a href="https://www.linkedin.com/in/aditithakkar" target="_blank">LinkedIn</a>
+				</div>
+		</div>	<br><br>
+		
+			
+		
+		
+			<div id="lower2">
+				<div class="innerbox" id="tag">
+					WORDS OF MY WORLD!<hr><img src="wordle.png" width="100%" style="padding-top: 2%;" />
+				</div>
+				<div class="innerbox" id="skills">
+					<img id="pic" src="1.png" onclick="show('ski'); hide('pic'); hide('hid');"><hr><DIV id="hid">CLICK ON THE IMAGE TO KNOW MY SKILLS</DIV>
+					
+    				<div id="ski" style="display: none;">
+  					HTML<progress max="100" value="85"></progress><br><br>
+  					CSS<progress max="100" value="80"></progress><br><br>
+  					Java<progress max="100" value="60"></progress><br><br>
+  					SCSS<progress max="100" value="65"></progress><br><br>
+  					C++<progress max="100" value="75"></progress><br><br>
+  					JavaScript<progress max="100" value="80"></progress><br><br>
+  					SQL<progress max="100" value="80"></progress><br>
+  					<br></div>
+				</div>
+			</div>
+		
+	</div>
+	<div class="box" id="project">
+		<div id="one" >
+			<h3>FIRST RESPONSIVE WEBSITE</h3>
+			
+			
+				<div id="change">
+	                    <img id="abc" onload="this.style.opacity='1';" src="proj1_1.png"  />
+	                    
+	                    <div id="option">
+	                       <ul>
+	                        <li><button onclick="change(1)">1</button></li>
+	                        <li><button onclick="change(2)">2</button></li>
+	                        <li><button onclick="change(3)">3</button></li>
+	                       </ul>
+	                    </div>
+				</div>
+				<div id="matter">
+					<br>
+					Designed a responsive webpage as a part of the Mobile Web Content and Development course assignment using HTML, CSS, JavaScript and SCSS<br>
+					Working further in the same course to develop an app for Android and iOS using Ionic, AngularJS and Node.js<br>
+					Link to this sample website: <a href="http://webpage.pace.edu/at64915n/cs641_assignment3/class3.html" target="_blank"> Sample Ultra Corporation Responsive Webpage </a>
+				<br>
+				</div>
+			<img class="arrow" onclick=" hide('one'); hide('two') ;show('three')" src="arrow_left.png" width="2%">	
+			<img class="arrow" onclick=" hide('one'); hide('three') ;show('two')" src="arrow_right.png" width="2%">
+		</div>
+		
+		<div id="two" style="display: none;">
+			<h3>ANIMATED PROFILE DESIGNING USING MACROMEDIA FLASH</h3><br>
+			<video width="400" controls>
+  			<source src="video.mp4" type="video/mp4">
+  			</video>
+  			<br>
+			<br><ul>
+			<li>Created personal profile using Flash animation, displaying various audio and video multimedia objects
+			</li>
+			<li>Designed the profile with animated buttons ensuring smooth transition between pages and manipulated the timeline to create motion tweens providing finer animations</li>
+			</ul>
+
+			<br>
+			<img class="arrow" onclick=" hide('three'); hide('two') ;show('one')" src="arrow_left.png" width="2%">	
+			<img id="arrow" onclick=" hide('one'); hide('two'); show('three')" src="arrow_right.png" width="2%">
+			
+		</div>
+
+		<div id="three" style="display: none;">
+			<h3>WEB USAGE MINING IN BUSINESS INTELLIGENCE</h3>
+			
+			<img src="proj2.png"/ width="70%" height="60%">
+			<br>
+			<br>
+			Modelled a system to analyze data for business intelligence with Apriori algorithm, using Java, SQL and HTML<br>
+			Worked on a team of four to develop an online shopping website to understand user behavioral patterns, thus generating reports and graphs that can assist in increasing product sales<br>
+			Paper Presented in International Conference on Advances in Computer & Information Technologies (ICACIT):<br> <a href="http://webpage.pace.edu/at64915n/icacit.pdf" target="_blank">Paper</a>,  
+			<a href="http://webpage.pace.edu/at64915n/report.pdf" target="_blank">Report</a><br>
+			Also won the 1st Prize at National Level Paper Presentation Competition for this research paper.
+			<br>
+			<img class="arrow" onclick=" hide('one'); hide('three') ;show('two')" src="arrow_left.png" width="2%">	
+			<img id="arrow" onclick=" hide('three'); hide('two'); show('one')" src="arrow_right.png" width="2%">
+			
+		</div>
+		
+			
+	</div>	
+	<div class="box" id="achievement">
+		<ul><center>ACHIEVEMENTS</center><HR>
+			<li>Best Student Award in Computer Engineering Department, 2012-2015</li><BR>
+			<li>First Prize at the National Level Paper Presentation Competition, 2014-2015 </li><BR>
+			<li>Certificates of Excellence for Computer Engineering Examinations:  Secured 2nd rank in the Institute for two years consecutively, 2012-2014 </li>
+		</ul>
+
+
+		<input type="radio" name="slide" id="img-1" checked>
+<input type="radio" name="slide" id="img-2">
+<input type="radio" name="slide" id="img-3">
+  
+<div class="img-box">
+  <img id="three" src="a.jpg" width="300px" height="200px">
+  <img id="two" src="b.jpg" width="300px" height="200px">
+  <img id="one" src="c.jpg" width="300px" height="200px">
+</div>
+<div class="nav">
+  <label for="img-1"><div id="dot-1" class="radio"></div></label>
+  <label for="img-2"><div id="dot-2" class="radio"></div></label>
+  <label for="img-3"><div id="dot-3" class="radio"></div></label>
+</div>
+
+	</div>
+	<div class="box" id="work">
+		<h4>PROFESSIONAL EXPERIENCE</h4><hr><br>
+
+			<div class="breaker">
+						
+				<div class="breaker1">
+					<h3>Graduate Assistant at Pace University Academic Technologies   </h3><br>     
+					<p>- Management of web content for Academic Technologies and Pace University ITS websites using Drupal.<br>
+					- Testing pages on the website and fixing issues with the same, along with management of the helpdesk tickets.<br>
+					- Providing technical support to faculty and students with Blackboard, E-portfolio and Edu blog portals.</p>
+				</div>
+				<img src="at.png" style="margin: 2%;" width="90%" />
+				
+			</div>
+		
+		<br><br>
+
+			<H4>VOLUNTEERING EXPERIENCE</H4><hr><br>
+		
+				<div class="breaker">
+					<div class="breaker1">
+					<H3>Pace University, Seidenberg School of CSIS, New York, NY</H3>
+					Cyber Security Seminar and Diwali event: Volunteer<BR><br>	
+					<H3>Rajiv Gandhi Institute of Technology, Mumbai, India</H3>
+					CESS Committee: Editor Secretory
+					<BR>Computer Engineering Department:  Class Representative
+					<BR>Institute of Electrical and Electronics Engineers (IEEE): Committee Member	
+					</div>
+					<img src="mct.jpg" style="margin: 2%;" width="90%"/>
+
+				</div>
+
+	</div>
+	<div class="box" id="contact">
+		
+		<div class="imga" id="link" style="margin-left: 10%;"><a href="https://www.linkedin.com/in/aditithakkar"><img src="linkedin.png" width="5%"></a><div clss="txt">www.linkedin.com/in/aditithakkar</div></div><br>
+		<div class="imga" id="email" style="margin-left: 30%;"><img src="email.png" width="5%"><div class="txt">at64915n@pace.edu</div></div>
+		<br><br>
+		
+		<div class="imga" id="call" style="margin-left: 45%;"><img src="call.png" width="5%"><div class="txt">(609) 592-9839</div></div><br>
+
+	</div>
+	
+
+<footer class="box" style="background-color: black; background-image: none; color: white; font-size: 120%;">
+	Made by Aditi Thakkar from scratch purely using HTML, CSS, SCSS and JavaScript, without use of any readymade frameworks.
+</footer>
+</section>
+
+</body>
+</html>

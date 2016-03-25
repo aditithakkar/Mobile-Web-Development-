@@ -1,0 +1,610 @@
+/* line 5, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+@keyframes slide {
+  0% {
+    width: 0%;
+  }
+  60% {
+    width: 50%;
+  }
+  70% {
+    width: 80%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 650px) {
+  /* line 22, ../sass/portfolio.scss */
+  #nav2 {
+    display: none;
+  }
+  /* line 25, ../sass/portfolio.scss */
+  #nav2 ul {
+    display: none;
+  }
+  /* line 27, ../sass/portfolio.scss */
+  #nav2 ul li {
+    display: none;
+  }
+
+  /* line 33, ../sass/portfolio.scss */
+  nav {
+    display: block;
+    position: fixed;
+    left: 0%;
+    top: 0%;
+  }
+  /* line 40, ../sass/portfolio.scss */
+  nav img {
+    cursor: pointer;
+  }
+  /* line 45, ../sass/portfolio.scss */
+  nav #open {
+    display: none;
+  }
+  /* line 48, ../sass/portfolio.scss */
+  nav #open li {
+    height: 50px;
+    text-align: center;
+    background: url("back1.jpg");
+    -moz-box-shadow: black 2px 2px 10px;
+    -webkit-box-shadow: black 2px 2px 10px;
+    box-shadow: black 2px 2px 10px;
+    color: white;
+    padding-top: 30px;
+    font-size: 200%;
+    width: 200px;
+  }
+
+  /* line 70, ../sass/portfolio.scss */
+  section .box {
+    width: 100%;
+  }
+  /* line 79, ../sass/portfolio.scss */
+  section #about .together {
+    display: flex;
+    height: 30%;
+    flex-flow: column !important;
+  }
+  /* line 85, ../sass/portfolio.scss */
+  section #about .together #i {
+    padding-left: 60%;
+  }
+  /* line 94, ../sass/portfolio.scss */
+  section #about #lower2 {
+    display: flex;
+    flex-flow: column !important;
+  }
+  /* line 99, ../sass/portfolio.scss */
+  section #about #lower2 #tag {
+    flex: 1;
+  }
+  /* line 103, ../sass/portfolio.scss */
+  section #about #lower2 #skills {
+    flex: 1;
+  }
+  /* line 112, ../sass/portfolio.scss */
+  section #work .breaker {
+    display: flex;
+    flex-flow: column !important;
+  }
+  /* line 117, ../sass/portfolio.scss */
+  section #work .breaker .breaker1 {
+    flex: 3;
+    order: 2;
+  }
+  /* line 122, ../sass/portfolio.scss */
+  section #work .breaker img {
+    flex: 1;
+    order: 1;
+  }
+  /* line 131, ../sass/portfolio.scss */
+  section #contact {
+    -moz-transition-property: width;
+    -o-transition-property: width;
+    -webkit-transition-property: width;
+    transition-property: width;
+  }
+  /* line 134, ../sass/portfolio.scss */
+  section #contact img {
+    width: 100%;
+  }
+  /* line 138, ../sass/portfolio.scss */
+  section #contact .imga {
+    font-size: 0% !important;
+  }
+  /* line 149, ../sass/portfolio.scss */
+  section #contact .imga:hover {
+    -moz-box-shadow: red 2px 2px 10px;
+    -webkit-box-shadow: red 2px 2px 10px;
+    box-shadow: red 2px 2px 10px;
+    width: 57% !important;
+    color: white;
+    font-size: 100% !important;
+  }
+  /* line 153, ../sass/portfolio.scss */
+  section #contact .imga:hover img {
+    width: 15%;
+  }
+}
+/* line 167, ../sass/portfolio.scss */
+body {
+  width: 100%;
+  min-width: 200px;
+}
+
+/* line 175, ../sass/portfolio.scss */
+header {
+  font-size: 300%;
+  text-align: center;
+  margin-top: 6%;
+  color: black;
+  font-family: Copperplate, 'Copperplate Gothic Light', fantasy;
+}
+
+/* line 185, ../sass/portfolio.scss */
+nav {
+  position: fixed;
+  left: 0%;
+  top: 0%;
+}
+/* line 192, ../sass/portfolio.scss */
+nav img {
+  cursor: pointer;
+}
+/* line 197, ../sass/portfolio.scss */
+nav #open {
+  display: none;
+}
+/* line 200, ../sass/portfolio.scss */
+nav #open li {
+  height: 50px;
+  text-align: center;
+  background: url("back1.jpg");
+  -moz-box-shadow: black 2px 2px 10px;
+  -webkit-box-shadow: black 2px 2px 10px;
+  box-shadow: black 2px 2px 10px;
+  color: white;
+  padding-top: 30px;
+  font-size: 200%;
+  width: 200px;
+}
+
+/* line 218, ../sass/portfolio.scss */
+#nav2 {
+  background: url("back1.jpg");
+  position: fixed;
+  top: 0%;
+  width: 100%;
+  color: white;
+}
+/* line 226, ../sass/portfolio.scss */
+#nav2 li {
+  display: inline-block;
+  margin: 1%;
+  padding: 1%;
+  padding-right: 1%;
+  padding-left: 1%;
+  color: white;
+  font-size: 120%;
+}
+/* line 236, ../sass/portfolio.scss */
+#nav2 li:hover {
+  animation: fade 0.5 ease-in;
+  border: 3px solid white;
+}
+
+/* line 243, ../sass/portfolio.scss */
+section {
+  min-width: 200px;
+}
+/* line 246, ../sass/portfolio.scss */
+section .box {
+  width: 85%;
+  margin-left: 1%;
+  background: url("back.jpg");
+  height: 25%;
+  width: 95%;
+  -moz-box-shadow: black 2px 2px 10px;
+  -webkit-box-shadow: black 2px 2px 10px;
+  box-shadow: black 2px 2px 10px;
+  -moz-border-radius-topright: 25px;
+  -webkit-border-top-right-radius: 25px;
+  border-top-right-radius: 25px;
+  -moz-border-radius-topleft: 25px;
+  -webkit-border-top-left-radius: 25px;
+  border-top-left-radius: 25px;
+  -moz-border-radius-bottomleft: 25px;
+  -webkit-border-bottom-left-radius: 25px;
+  border-bottom-left-radius: 25px;
+  -moz-border-radius-bottomright: 25px;
+  -webkit-border-bottom-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+  padding: 15px;
+  margin-bottom: 2%;
+  color: black;
+}
+/* line 264, ../sass/portfolio.scss */
+section #about {
+  display: flex;
+  flex-flow: column;
+}
+/* line 268, ../sass/portfolio.scss */
+section #about .together {
+  display: flex;
+  flex-flow: row;
+  flex: 2;
+  order: 1;
+}
+/* line 274, ../sass/portfolio.scss */
+section #about .together #i {
+  flex: 1;
+  padding-right: 3%;
+}
+/* line 281, ../sass/portfolio.scss */
+section #about .together #summary {
+  font-size: 130%;
+  flex: 3 !important;
+}
+/* line 287, ../sass/portfolio.scss */
+section #about .together #summary h3 {
+  font-style: italic;
+}
+/* line 291, ../sass/portfolio.scss */
+section #about .together #summary button {
+  display: none;
+}
+/* line 295, ../sass/portfolio.scss */
+section #about .together #summary #more1, section #about .together #summary #more2 {
+  display: block;
+}
+/* line 302, ../sass/portfolio.scss */
+section #about blockquote:before, section #about blockquote:after {
+  content: '"';
+  font-family: "Arial Narrow", Arial, Helvetica, sans-serif;
+}
+/* line 308, ../sass/portfolio.scss */
+section #about blockquote {
+  text-align: center;
+  padding: 3%;
+  font-size: 150%;
+  font-style: oblique;
+  flex: 2;
+  order: 3;
+}
+/* line 321, ../sass/portfolio.scss */
+section #about #side {
+  order: 2;
+  flex: 1;
+}
+/* line 326, ../sass/portfolio.scss */
+section #about #lower2 {
+  order: 4;
+  flex: 3;
+  display: flex;
+  flex-flow: row;
+}
+/* line 333, ../sass/portfolio.scss */
+section #about #lower2 #tag {
+  flex: 1;
+}
+/* line 337, ../sass/portfolio.scss */
+section #about #lower2 #skills {
+  flex: 1;
+}
+/* line 340, ../sass/portfolio.scss */
+section #about #lower2 #skills #pic:hover {
+  transform: rotateY(45deg);
+}
+/* line 346, ../sass/portfolio.scss */
+section #about #lower2 #skills progress {
+  width: 300px;
+  height: 16x;
+  margin-left: 2%;
+  display: inline-block;
+  -webkit-appearance: none;
+}
+/* line 355, ../sass/portfolio.scss */
+section #about #lower2 #skills progress::-webkit-progress-bar {
+  background: grey;
+  border-radius: 50px;
+  padding: 2px;
+  box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+}
+/* line 363, ../sass/portfolio.scss */
+section #about #lower2 #skills progress::-webkit-progress-value {
+  border-radius: 50px;
+  box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+  background: blue;
+}
+/* line 378, ../sass/portfolio.scss */
+section #about #side {
+  flex: 3;
+  display: flex;
+  flex-flow: row-wrap;
+  float: left;
+}
+/* line 385, ../sass/portfolio.scss */
+section #about #side .button {
+  display: inline-block;
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuMCIgeTE9IjAuMCIgeDI9IjEuMCIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzIwNmNhOCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzJjNGU4NiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 0% 0%, 100% 100%, color-stop(0%, #206ca8), color-stop(100%, #2c4e86));
+  background-image: -moz-linear-gradient(top, #206ca8, #2c4e86);
+  background-image: -webkit-linear-gradient(top, #206ca8, #2c4e86);
+  background-image: linear-gradient(to bottom right, #206ca8, #2c4e86);
+  color: black;
+  -moz-box-shadow: black 2px 2px 10px;
+  -webkit-box-shadow: black 2px 2px 10px;
+  box-shadow: black 2px 2px 10px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-top-right-radius: 15px;
+  border-top-right-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  -webkit-border-top-left-radius: 15px;
+  border-top-left-radius: 15px;
+  -moz-border-radius-bottomleft: 15px;
+  -webkit-border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  -moz-border-radius-bottomright: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 15px;
+  margin: 15px;
+  width: 5%;
+  text-align: center;
+  font-size: 120%;
+}
+/* line 401, ../sass/portfolio.scss */
+section #about #side #button1 {
+  flex: 1;
+}
+/* line 403, ../sass/portfolio.scss */
+section #about #side #button2 {
+  flex: 1;
+}
+/* line 408, ../sass/portfolio.scss */
+section #about .innerbox {
+  flex: 4;
+  text-align: center;
+  width: 25;
+  -moz-box-shadow: black 2px 2px 10px;
+  -webkit-box-shadow: black 2px 2px 10px;
+  box-shadow: black 2px 2px 10px;
+  -moz-border-radius-topright: 15px;
+  -webkit-border-top-right-radius: 15px;
+  border-top-right-radius: 15px;
+  -moz-border-radius-topleft: 15px;
+  -webkit-border-top-left-radius: 15px;
+  border-top-left-radius: 15px;
+  -moz-border-radius-bottomleft: 15px;
+  -webkit-border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  -moz-border-radius-bottomright: 15px;
+  -webkit-border-bottom-right-radius: 15px;
+  border-bottom-right-radius: 15px;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  font-size: 150%;
+  color: black;
+}
+/* line 428, ../sass/portfolio.scss */
+section #project {
+  text-align: center;
+  font-size: 120%;
+}
+/* line 432, ../sass/portfolio.scss */
+section #project img {
+  margin-top: 2%;
+}
+/* line 436, ../sass/portfolio.scss */
+section #project .arrow:hover {
+  width: 2.5%;
+}
+/* line 442, ../sass/portfolio.scss */
+section #project #one #abc {
+  width: 40%;
+}
+/* line 446, ../sass/portfolio.scss */
+section #project #one li {
+  display: inline;
+}
+/* line 456, ../sass/portfolio.scss */
+section #work .breaker {
+  display: flex;
+  flex-flow: row;
+}
+/* line 461, ../sass/portfolio.scss */
+section #work .breaker .breaker1 {
+  flex: 3;
+  order: 1;
+}
+/* line 466, ../sass/portfolio.scss */
+section #work .breaker img {
+  flex: 1;
+  order: 2;
+}
+/* line 473, ../sass/portfolio.scss */
+section #work h4 {
+  font-weight: bold;
+}
+/* line 477, ../sass/portfolio.scss */
+section #work h3 {
+  color: #00008B;
+  font-weight: bold;
+}
+/* line 484, ../sass/portfolio.scss */
+section #achievement {
+  font-size: 130%;
+}
+/* line 487, ../sass/portfolio.scss */
+section #achievement input {
+  display: none;
+}
+/* line 491, ../sass/portfolio.scss */
+section #achievement .radio {
+  width: 20px;
+  height: 20px;
+  margin: 7px 7px 0 0;
+  padding: 0;
+  text-align: center;
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;
+  font-weight: 900;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color .4s;
+}
+/* line 510, ../sass/portfolio.scss */
+section #achievement .radio:hover {
+  background-color: #727272;
+}
+/* line 514, ../sass/portfolio.scss */
+section #achievement input:checked ~ .radio {
+  color: #FFF;
+  background-color: #000;
+  opacity: 1;
+}
+/* line 520, ../sass/portfolio.scss */
+section #achievement .img-box {
+  width: 300px;
+  height: 200px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+/* line 528, ../sass/portfolio.scss */
+section #achievement #one, section #achievement #two, section #achievement #three {
+  opacity: 0;
+  -webkit-transform: translate(0, 30px);
+  transition-property: -webkit-transform, opacity;
+  transition-duration: .5s;
+  position: absolute;
+}
+/* line 536, ../sass/portfolio.scss */
+section #achievement #img-1:checked ~ .img-box #one,
+section #achievement #img-2:checked ~ .img-box #two,
+section #achievement #img-3:checked ~ .img-box #three {
+  opacity: 1;
+  -webkit-transform: translate(0, 0);
+}
+/* line 543, ../sass/portfolio.scss */
+section #achievement #img-1:checked ~ .nav label #dot-1.radio,
+section #achievement #img-2:checked ~ .nav label #dot-2.radio,
+section #achievement #img-3:checked ~ .nav label #dot-3.radio {
+  color: #FFF;
+  background-color: #000;
+}
+/* line 550, ../sass/portfolio.scss */
+section #achievement .nav {
+  width: 120px;
+  margin: 0 auto;
+}
+/* line 558, ../sass/portfolio.scss */
+section #contact {
+  height: 30%;
+  -moz-transition-property: width;
+  -o-transition-property: width;
+  -webkit-transition-property: width;
+  transition-property: width;
+}
+/* line 561, ../sass/portfolio.scss */
+section #contact img {
+  width: 100%;
+}
+/* line 565, ../sass/portfolio.scss */
+section #contact .imga {
+  text-align: center;
+  background: url("back1.jpg");
+  padding: 0.5%;
+  width: 10%;
+  color: black;
+  -moz-box-shadow: black 2px 2px 10px;
+  -webkit-box-shadow: black 2px 2px 10px;
+  box-shadow: black 2px 2px 10px;
+  -moz-transition-property: width;
+  -o-transition-property: width;
+  -webkit-transition-property: width;
+  transition-property: width;
+  font-size: 0%;
+}
+/* line 583, ../sass/portfolio.scss */
+section #contact .imga:hover {
+  -moz-box-shadow: red 2px 2px 10px;
+  -webkit-box-shadow: red 2px 2px 10px;
+  box-shadow: red 2px 2px 10px;
+  width: 50%;
+  color: white;
+  font-size: 200%;
+}
+/* line 587, ../sass/portfolio.scss */
+section #contact .imga:hover img {
+  width: 20%;
+}
