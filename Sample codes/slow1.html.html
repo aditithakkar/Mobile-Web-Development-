@@ -1,0 +1,138 @@
+<html>
+<head>
+	<style>
+
+		body
+		{
+			background-color: black;
+		}
+		.wandering 
+		{
+			background-color: red;
+			position: absolute;
+			border-radius: 5px;
+			top: 50px; 
+			left: 450px; 
+			width: 10px; 
+			height: 10px;
+			margin:5%;
+		}
+
+		#container 
+		{
+			height: 100%; 
+			width: 100%; 
+		
+		}
+
+		button
+		{
+			background-color: transparent;
+			border: 3px solid red;
+			color:white;
+			cursor: pointer;
+			font-weight: bolder;
+			margin: 1%;
+			padding:1%;
+			border-radius: 35px;
+		}
+
+		button:hover
+		{
+			background-color: red;
+			}
+		
+
+
+	</style>
+</head>
+<body onload="init()" >
+
+<button onclick="play()">Click to see animation live!!!(Move cursor)</button>
+
+<button onClick="window.location.reload()">Reload Page to see step by step >>></button>
+<button onclick="do1()">Keep on clicking here to see step by step animation</button>
+<div id="container">
+</div>
+	
+	<script>
+
+        
+
+		function init() 
+		{
+			var container = document.getElementById('container');
+			var check=0;
+			for (var n=0; n<100; n++) 
+			{
+			container.innerHTML += "<div class='wandering'></div>";
+			}
+		}
+
+	function do1()
+	{
+
+		
+			var check=0;
+			var them = document.getElementsByClassName("wandering");
+			for (var n=0; n<them.length; n++) 
+			{
+				them[n].style.top = ((Math.random()*250)+50) ;
+				them[n].style.left = ((Math.random()*450)+250);
+				
+					if(check%2==0)
+					{
+						them[n].style.background = "blue";
+					}
+					else
+						them[n].style.background = "red";
+						check++;
+								
+			}
+		
+		
+	}
+
+
+	function play()
+	{
+		document.onmousemove = function(e) 
+		{
+			
+			var them = document.getElementsByClassName("wandering");
+			for (var n=0; n<them.length; n++) 
+			{
+				them[n].style.top = ((e.clientY + Math.random()*250)-150) + "px";
+				them[n].style.left = ((e.clientX + Math.random()*250)-150) + "px";
+
+				
+					
+						them[n].style.background = "red";
+					
+			}				
+			
+	
+		}
+
+		document.ontouchmove = function(e) 
+            {
+              e.preventDefault();
+             var them = document.getElementsByClassName("wandering");
+			for (var n=0; n<them.length; n++) 
+             {
+              	for (var k=0; k<e.touches.length; k++) 
+              {
+
+                  them[n].style.top =((e.touches[k].pageX+ Math.random()*250)-150) + "px";
+                  them[n].style.top =((e.touches[k].pageY+ Math.random()*250)-150) + "px";
+                  them[n].style.background = "red";
+              
+              }
+            }
+	}}
+
+	</script> 
+</body>
+</html>
+
+

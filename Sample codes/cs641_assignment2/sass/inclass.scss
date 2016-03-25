@@ -1,0 +1,147 @@
+@import "compass";
+@import "compass/reset";
+
+
+$boxWidth:150px;
+$small:100px;
+
+
+@mixin background-image($images...)  {
+	
+	-webkit-background-image:$images; 
+     -moz-background-image:$images; 
+     background-image:$images; 
+
+}
+
+
+#end
+{
+position:absolute;
+left:30%;
+top:30%;
+color:red;
+font-size:45px;
+}
+
+#whole
+{
+	margin-left:20px;
+	margin-top:20px;
+	width:725px;
+	height: 400px;
+	border: 7px solid grey;
+	box-sizing: border-box;
+
+}
+
+  @keyframes fade {
+  
+0% { opacity: 0; }
+  100% { opacity: 1; }
+  }
+
+@keyframes hide {
+  
+0% { opacity: 0; }
+  100% { opacity: 0; }
+  }
+
+
+#first,#second 
+{
+height:$boxWidth;
+width: $boxWidth;
+}
+   
+#first:hover, #second:hover
+{
+	@include box-shadow(red 2px 2px 10px);
+}
+
+#first,#a,#b,#c,#d,#second 
+{
+margin:10px*2;
+@include text-shadow(rgba(blue, 0.2) 1px 1px 0, rgba(blue, 0.2) 2px 2px 0, rgba(blue, 0.2) 3px 3px 0);
+@include border-corner-radius(top, left, 40px);
+  @include border-corner-radius(top, right, 5px);
+  @include border-corner-radius(bottom, left, 15px);
+  @include border-corner-radius(bottom, right, 30px);
+  
+  }
+
+  #first
+{
+
+	@include background-image(linear-gradient(to bottom right, white, blue));	
+
+}
+
+
+#next
+{
+	border:3px solid white;
+	position:absolute;
+	top:90;
+	left:210;
+
+}
+
+#second
+{
+	@include background-image(linear-gradient(to bottom right, grey, red));
+	border:3px solid white;
+	position:absolute;
+	top:110;
+	left:370;
+	animation:hide 0.2s, fade 0.5s;
+	animation-delay:0s, 0.5s;
+}
+
+#a, #b, #c, #d
+{
+	@include background-image(linear-gradient(to bottom right, yellow, green));
+	animation: hide 3s, fade 3s ease-in ;
+	border:3px solid white;
+	position:absolute;
+	height:$small;
+    width: $small;
+     @include transition-property(width);
+}
+
+#a
+{
+	top:30;
+	left:540;
+	animation-delay:0s,0s;
+ 
+}
+#b
+{
+	top:100;
+	left:600;
+	animation-delay:0s,1s;
+
+}
+
+#c
+{
+	top:180;
+	left:600;
+	animation-delay:0s,2s;
+
+}
+#d
+{
+	top:250;
+	left:540;
+	animation-delay:0s,3s;
+
+}
+
+#d:hover
+{
+	width:130px;
+}
+
+

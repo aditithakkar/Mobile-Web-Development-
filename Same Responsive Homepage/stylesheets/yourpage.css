@@ -1,0 +1,44 @@
+/* line 3, ../sass/yourpage.scss */
+.firstBlock {
+  background-color: red;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* line 11, ../sass/yourpage.scss */
+.secondBlock {
+  flex: 5;
+  min-width: 500px;
+}
+/* line 13, ../sass/yourpage.scss */
+.secondBlock img {
+  diplay: none;
+  height: 400px;
+  width: 700px;
+}
+
+/* line 24, ../sass/yourpage.scss */
+div {
+  margin: 10px;
+  padding: 10px;
+  background-color: #ddd;
+}
+
+/* line 33, ../sass/yourpage.scss */
+#search {
+  float: right;
+  padding-right: 10px;
+}
+
+/* line 39, ../sass/yourpage.scss */
+section {
+  display: flex;
+  flex-flow: column;
+}
+
+@media screen and (max-width: 600px) {
+  /* line 44, ../sass/yourpage.scss */
+  .secondBlock {
+    order: -1;
+  }
+}

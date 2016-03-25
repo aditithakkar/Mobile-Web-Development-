@@ -1,0 +1,216 @@
+@import "compass";
+@import "compass/reset";
+
+$tabh:8%;
+$tabw:25%;
+
+@media screen and (max-width:600px)
+{
+	body
+	{
+	width:100%;
+	}
+	section
+	{
+	display:flex;
+	flex-flow:column;
+		.left
+		{ 
+			ul
+			{
+			display:flex;
+			flex-flow:column;
+			
+			}
+
+	    }
+	}
+}
+
+@keyframes fade {
+  
+0% { opacity: 0; }
+  100% { opacity: 1;}
+  }
+
+@keyframes hide {
+  
+0% { opacity: 0;  }
+  100% { opacity: 0; }
+  }
+
+
+body
+{
+	@include background-image(linear-gradient(to bottom right, grey,grey));
+	margin:auto;
+	width:90%;
+	display:flex;
+	flex-flow:column;
+}
+
+header
+{	
+	margin-top:1%;
+	flex:3;
+	text-align:center;
+	@include background-image(linear-gradient(to bottom right, black, blue));
+	font-size:30px;
+	color:white;
+	
+}
+
+section
+{	
+	flex:9;
+	display:flex;
+	flex-flow:row-wrap;
+	margin:10px;
+	min-width:200;
+
+	.left
+	{
+		min-width:200;
+		margin:5px;
+		padding-left:10px;
+		padding-top:10px;
+		flex:5;
+		@include background-image(linear-gradient(to bottom right, white, grey));	
+		@include box-shadow(black 2px 2px 10px);
+		@include border-corner-radius(top, right, 15px);
+		@include border-corner-radius(bottom, left, 15px);
+		@include border-corner-radius(bottom, right, 15px);
+		
+
+			ul
+			{
+				display:flex;
+				text-align:center;
+				
+					li
+					{
+
+					text-align:center;
+					padding-top:10px;
+					padding-bottom:10px;
+					display:inline;
+					text-decoration:overline;
+					padding-right:15px;
+					padding-left:15px;
+					font-size:20px;
+					}
+			}
+
+			li:hover
+			{
+				text-align:center;
+				animation: hide 0s, fade 0.4s;
+			   	height:$tabh;
+				@include background-image(linear-gradient(to bottom right, white, yellow));	
+				@include box-shadow(yellow 2px 2px 10px);
+				@include border-corner-radius(top, left, 15px);
+				@include border-corner-radius(top, right, 15px);
+				@include border-corner-radius(bottom, left, 15px);
+				@include border-corner-radius(bottom, right, 15px);
+			}
+
+			#change
+			{		
+			  img
+		            {
+		            display:block;
+		            margin-left:auto;
+		            margin-right:auto;
+		            opacity:0;
+		            @include box-shadow(black 2px 2px 10px);
+		            @include border-corner-radius(top, right, 15px);
+	 				@include border-corner-radius(bottom, left, 15px);
+	 				@include border-corner-radius(bottom, right, 15px);
+		           
+					height:60%;;
+					
+					width:90%;
+					transition: opacity 2s;
+					}				
+			}
+			#option
+			{
+			margin-left:6%;
+			li:hover
+			{
+				text-align:center;
+				color:yellow;
+				animation: hide 0s, fade 0.3s;
+			   	height:6%;
+			   	@include background-image(linear-gradient(to bottom right, white, yellow));	
+				
+			}
+			}
+			
+	}	
+
+	#right
+	{
+		margin:5px;
+		flex:2;
+		text-align:center;
+		@include background-image(linear-gradient(to bottom right, white, grey));	
+		@include box-shadow(black 2px 2px 10px);
+		@include border-corner-radius(top, right, 15px);
+	 	@include border-corner-radius(bottom, left, 15px);
+	 	@include border-corner-radius(bottom, right, 15px);
+	 	padding-top:20px;
+	 	padding-bottom:20px;
+
+		 	#login
+			{
+				margin:auto;
+				width:200px;
+				height:200px;
+				@include box-shadow(black 2px 2px 10px);
+				@include border-corner-radius(top, right, 15px);
+				@include border-corner-radius(bottom, left, 15px);
+				@include border-corner-radius(bottom, right, 15px);
+				@include background-image(linear-gradient(to bottom right, white, white));
+			}
+
+			aside
+			{
+			margin-left:10%;
+			margin-right:10%;
+			p{
+			color:#000066;
+			}
+			h4
+			{@include text-shadow(rgba(blue, 0.2) 1px 1px 0, rgba(blue, 0.2) 2px 2px 0, rgba(blue, 0.2) 3px 3px 0);}
+			}
+	}
+}
+
+footer
+{
+	flex:3;
+	text-align:center;
+	@include background-image(linear-gradient(to bottom right, black, blue));
+	float:bottom;
+	height:40%;
+	color:white;
+	#search
+		{
+			margin:20px 20px 20px 20px;
+			float:left;
+		}
+	#text
+	{
+	padding-top:40px;
+	float:right;
+		a
+		{	
+			color:yellow;
+			padding:10px;
+
+		}
+	}
+}
+
+

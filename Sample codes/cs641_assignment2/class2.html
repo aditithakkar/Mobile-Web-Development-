@@ -1,0 +1,40 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+<head>
+	<title>Class II</title>
+<script type="text/javascript">
+	
+  function show (toBlock){
+    setDisplay(toBlock, 'block');
+  }
+  function hide (toNone) {
+    setDisplay(toNone, 'none');
+  }
+  function setDisplay (target, str) {
+    document.getElementById(target).style.display = str;
+  }
+
+
+</script>	<link rel="stylesheet" type="text/css" href="stylesheets/inclass.css">
+</head>
+<body >
+
+<div id="whole">
+
+<div id="first" onclick="show('second'); show('next');"><center>Click to begin<center></div>
+
+<img src="next.jpg" onmouseover="bigImg(this)" " id="next" style="display:none;" width="150"/>
+
+<div id="second" style="display:none;" onclick="show('a');show('b');show('c');show('d');"><center>Click here!!!<center></div>
+
+<div id="a" style="display:none;"><center>THIS<center></div>
+<div id="b" style="display:none;"><center>IS<center></div>
+<div id="c" style="display:none;"><center>SECOND<center></div>
+<div id="d" style="display:none;" onclick="hide('first');hide('first');hide('second');hide('next');hide('a');hide('b');hide('c');hide('d');show('end');"><center>ASSIGNMENT (Please click to end)<center></div>
+<div id="end" style="display:none;">THANKYOU!!!</div>
+
+</div>
+
+</body>
+</html>
+<html>

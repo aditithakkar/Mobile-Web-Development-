@@ -1,0 +1,207 @@
+/* line 5, ../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../Ruby21/lib/ruby/gems/2.1.0/gems/compass-core-1.0.3/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 18, ../sass/inclass.scss */
+#end {
+  position: absolute;
+  left: 30%;
+  top: 30%;
+  color: red;
+  font-size: 45px;
+}
+
+/* line 27, ../sass/inclass.scss */
+#whole {
+  margin-left: 20px;
+  margin-top: 20px;
+  width: 725px;
+  height: 400px;
+  border: 7px solid grey;
+  box-sizing: border-box;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes hide {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+/* line 51, ../sass/inclass.scss */
+#first, #second {
+  height: 150px;
+  width: 150px;
+}
+
+/* line 57, ../sass/inclass.scss */
+#first:hover, #second:hover {
+  -moz-box-shadow: red 2px 2px 10px;
+  -webkit-box-shadow: red 2px 2px 10px;
+  box-shadow: red 2px 2px 10px;
+}
+
+/* line 62, ../sass/inclass.scss */
+#first, #a, #b, #c, #d, #second {
+  margin: 20px;
+  text-shadow: rgba(0, 0, 255, 0.2) 1px 1px 0, rgba(0, 0, 255, 0.2) 2px 2px 0, rgba(0, 0, 255, 0.2) 3px 3px 0;
+  -moz-border-radius-topleft: 40px;
+  -webkit-border-top-left-radius: 40px;
+  border-top-left-radius: 40px;
+  -moz-border-radius-topright: 5px;
+  -webkit-border-top-right-radius: 5px;
+  border-top-right-radius: 5px;
+  -moz-border-radius-bottomleft: 15px;
+  -webkit-border-bottom-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  -moz-border-radius-bottomright: 30px;
+  -webkit-border-bottom-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+/* line 73, ../sass/inclass.scss */
+#first {
+  -webkit-background-image: linear-gradient(to bottom right, #ffffff, #0000ff);
+  -moz-background-image: linear-gradient(to bottom right, #ffffff, #0000ff);
+  background-image: linear-gradient(to bottom right, #ffffff, #0000ff);
+}
+
+/* line 81, ../sass/inclass.scss */
+#next {
+  border: 3px solid white;
+  position: absolute;
+  top: 90;
+  left: 210;
+}
+
+/* line 90, ../sass/inclass.scss */
+#second {
+  -webkit-background-image: linear-gradient(to bottom right, #808080, #ff0000);
+  -moz-background-image: linear-gradient(to bottom right, #808080, #ff0000);
+  background-image: linear-gradient(to bottom right, #808080, #ff0000);
+  border: 3px solid white;
+  position: absolute;
+  top: 110;
+  left: 370;
+  animation: hide 0.2s, fade 0.5s;
+  animation-delay: 0s, 0.5s;
+}
+
+/* line 101, ../sass/inclass.scss */
+#a, #b, #c, #d {
+  -webkit-background-image: linear-gradient(to bottom right, #ffff00, #008000);
+  -moz-background-image: linear-gradient(to bottom right, #ffff00, #008000);
+  background-image: linear-gradient(to bottom right, #ffff00, #008000);
+  animation: hide 3s, fade 3s ease-in;
+  border: 3px solid white;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  -moz-transition-property: width;
+  -o-transition-property: width;
+  -webkit-transition-property: width;
+  transition-property: width;
+}
+
+/* line 112, ../sass/inclass.scss */
+#a {
+  top: 30;
+  left: 540;
+  animation-delay: 0s,0s;
+}
+
+/* line 119, ../sass/inclass.scss */
+#b {
+  top: 100;
+  left: 600;
+  animation-delay: 0s,1s;
+}
+
+/* line 127, ../sass/inclass.scss */
+#c {
+  top: 180;
+  left: 600;
+  animation-delay: 0s,2s;
+}
+
+/* line 134, ../sass/inclass.scss */
+#d {
+  top: 250;
+  left: 540;
+  animation-delay: 0s,3s;
+}
+
+/* line 142, ../sass/inclass.scss */
+#d:hover {
+  width: 130px;
+}
