@@ -1,32 +1,21 @@
 <html> 
-  
   <head> 
-  <title>Canvas</title>
-   
+    <title>Canvas</title>
     <meta name="viewport" content="width=device-width"/>
-<style type="text/css">
-  @media screen and (max-width: 600px)
-  {
-    
-    H2
-    {
-      
-      font-size: 10px;
-    }
-    img
-
-  {
-    display: none;
-  }
- 
-
-  }
-</style>
+    <style type="text/css">
+      @media screen and (max-width: 600px)
+      {
+        H2 {font-size: 10px;}
+        img {display: none;}
+      }
+    </style>
   </head>
 
-    
   <body>
-    <header style="background-color:#4A8BF5;padding:1%;"><CENTER><img style="vertical-align: text-top; margin-right: 2%;" id="top" src="canvas.gif" width="50px" /><H2 style="display: inline;">YOUR VERY OWN DRAWING BOARD!!!</H2></CENTER>
+    <header style="background-color:#4A8BF5;padding:1%;">
+      <CENTER><img style="vertical-align: text-top; margin-right: 2%;" id="top" src="canvas.gif" width="50px" />
+      <H2 style="display: inline;">YOUR VERY OWN DRAWING BOARD!!!</H2></CENTER>
+      
       <center>
        <button id="br" onclick="hide('br'); show('heading'); show('colors1'); show('colors2');show('colors3');">Pick Another Brush Color</button>
        <h3 id="heading" style="display: none;">Colors:</h3>
@@ -79,63 +68,52 @@
       
     <script> 
 
-      function show(target) {
-      document.getElementById(target).style.display = 'inline';
-      }
-      function hide(target) {
-      document.getElementById(target).style.display = 'none';
-     }
+      function show(target) 
+      {document.getElementById(target).style.display = 'inline';}
+      function hide(target) 
+      {document.getElementById(target).style.display = 'none';}
 
-          var canvas = document.getElementById("c");
+        var canvas = document.getElementById("c");
+        canvas.width = window.innerWidth;
+        canvas.height = 400;
+        var c = canvas.getContext("2d");
 
-          canvas.width = window.innerWidth;
-          canvas.height = 400;
-         
-          var c = canvas.getContext("2d");
+        var small1=10;
+        var shape='circle';
+        var rect1=25;
+        cir=15;
+        var color;
+        stroke=false;
 
-
-         
-          var small1=10;
-          var shape='circle';
-          var rect1=25;
-          cir=15;
-          var color;
-          stroke=false;
-
-          function animat()
-          {
-
-          var posX=0, posY=100;
-          var count=0;
-           var col="blue";
-           var bottom=canvas.height;
-          
+        function animat()
+        {
+         var posX=0, posY=100;
+         var count=0;
+         var col="blue";
+         var bottom=canvas.height;
          c.font = "30px Arial";
-c.fillText("The Two Layer Stacking Balls...Refresh Page to Exit",220,50);
+         c.fillText("The Two Layer Stacking Balls...Refresh Page to Exit",220,50);
         
-
           setInterval(function()
           {
-                  posY+=1;
-                 
-                  if(posY==bottom)
-                  {
-                  posX+=200;
-                  posY-=bottom;
-                  
-                  }
+            posY+=1;
+            if(posY==bottom)
+            {
+              posX+=200;
+              posY-=bottom;
+            }
                 
-                 c.fillStyle="rgba(0,0,0,0.01)";
-                  c.fillRect(0,0,canvas.width,canvas.height);
-                  c.fillStyle=col;
-                  c.beginPath();
-                  c.arc(posX,posY,100,0,2*Math.PI);
-                  c.fill();
-                  c.strokeStyle="white";
-                  c.stroke();
+             c.fillStyle="rgba(0,0,0,0.01)";
+             c.fillRect(0,0,canvas.width,canvas.height);
+             c.fillStyle=col;
+             c.beginPath();
+             c.arc(posX,posY,100,0,2*Math.PI);
+             c.fill();
+             c.strokeStyle="white";
+             c.stroke();
 
-                  if(posX>=canvas.width){
-                    
+                  if(posX>=canvas.width)
+                  {
                     count+=15;
                     posY=100-count;
                     posX=0+count;
@@ -148,106 +126,90 @@ c.fillText("The Two Layer Stacking Balls...Refresh Page to Exit",220,50);
                     col="blue";
                     posX=0;
                     posY=100;
-
                     bottom=canvas.height;
-
                     }
                   }
-                  
-
-                  
-          },1);
-
-        }
+          },1);//interval timer ends
+        }//function animate ends
       
-     
      function changeS(shape1)
      {
       shape=shape1;
      }
+     
+     function clearnow()
+     {
+       c.clearRect(0, 0, canvas.width, canvas.height);
+     }
 
+     function changeW(size)
+      {
+       small1=size;
+       rect1=size*4;
+       cir=size;
+      }
 
-          function clearnow()
-          {
+      function changeColor(color1)
+      { 
+        c.fillStyle=color1;
+        color=color1;
+      }
            
-        c.clearRect(0, 0, canvas.width, canvas.height);
-          
-          }
-
-          function changeW(size)
+      function drawSquare(x, y) 
+      {
+        if(shape=='square')
           {
-            small1=size;
-            rect1=size*4;
-            cir=size;
-
-
+              if(stroke==true)
+              {
+                c.rect(x, y, small1, small1 ); 
+                c.strokeStyle=color;
+                c.stroke();
+              }
+              else
+              {
+                c.fillRect(x, y, small1, small1 ); 
+              }
           }
-
-          function changeColor(color1)
-            { 
-            c.fillStyle=color1;
-            color=color1;
-            }
-           
-           function drawSquare(x, y) 
-            {
-              if(shape=='square')
+            
+        if(shape=='rect') 
+          {
+             if(stroke==true)
               {
-                  
-                  if(stroke==true)
-                  {
-
-                  c.rect(x, y, small1, small1 ); 
-                  c.strokeStyle=color;
-                  c.stroke();
-                  }
-                  else
-                  {
-                  c.fillRect(x, y, small1, small1 ); 
-                  }
-
+               c.rect(x, y, small1, rect1 ); 
+               c.strokeStyle=color;
+               c.stroke();
               }
-              if(shape=='rect') 
+              else
               {
-                if(stroke==true)
-                  {
-                  c.rect(x, y, small1, rect1 ); 
-                  c.strokeStyle=color;
-                  c.stroke();
-                  }
-                  else
-                  {
-                c.fillRect(x, y, small1, rect1 ); 
+               c.fillRect(x, y, small1, rect1 ); 
               }
-              }
-              if(shape=='circle')
+          }
+      
+        if(shape=='circle')
+          {
+             if(stroke==true)
+               {
+                 c.beginPath();
+                 c.arc(x, y,cir,0,2*Math.PI);
+                 c.strokeStyle=color;
+                 c.stroke();
+               }
+             else
+               {
+                c.beginPath();
+                c.arc(x, y,cir,0,2*Math.PI);
+                c.fillStyle = color;
+                c.fill();
+                c.stroke();
+               }
+          } 
+               
+        if(shape=='img')
               {
-                if(stroke==true)
-                {
-                  c.beginPath();
-                  c.arc(x, y,cir,0,2*Math.PI);
-                  c.strokeStyle=color;
-                  c.stroke();
-                }
-                else
-                {
-                  c.beginPath();
-                  c.arc(x, y,cir,0,2*Math.PI);
-                  c.fillStyle = color;
-                  c.fill();
-                  c.stroke();
-                }
-              } 
-               if(shape=='img')
-              {
-                  
                var img = document.getElementById("top");
                c.drawImage(img, x, y);
-                    
-                
-               }
-            }
-
+              }
+      }//draw square ends
 
             function changeF(val) 
             {
@@ -257,8 +219,6 @@ c.fillText("The Two Layer Stacking Balls...Refresh Page to Exit",220,50);
                 stroke=true;
             }
 
-          
-            
             document.ontouchmove = function(e) 
             {
               e.preventDefault();
