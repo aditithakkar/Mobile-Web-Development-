@@ -4,123 +4,109 @@
 		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
 		<style>
 			body { margin: 0;}
-			
-		
 		</style>
 	</head>
 	<body>
 		<script src="js/three.js"></script>
-		<script src="js/OrbitControls.js"></script>
+		<script src="js/OrbitControls.js"></script> <!--For Mouse Controls-->
 		
-
 		<header style="position: absolute; color: white; font-size: 30; top: 60; left: 20;">
 			<center>THREE.JS ASSIGNMENT
 			<BR><br>_________________<br><br>
-			<button style="background-color: transparent; border-radius: 5; border-color: white; color: white; height: 50px;"  onclick="change()">Click to view the diamond in safe!!!</button><br><br><h6>(Use Mouse To View in 3D)</h6></center>
+			<button style="background-color: transparent; border-radius: 5; border-color: white; color: white; height: 50px;"  onclick="change()">
+				Click to view the diamond in safe!!!</button><br><br><h6>(Use Mouse To View in 3D)</h6></center>
 		</header>		
 		<footer style="position: absolute; color: white; font-size: 25; bottom: 70; right: 40;">
 			<center>-Made By Aditi Thakkar</center>
 		</footer>
 		<script>
 
-
-			
-
-			function change()
+			function change() //Change the inner sheet Plane to a diamond structure
 			{
-				var geometry = new THREE.SphereGeometry( 3, 2, -3 );
+			   var geometry = new THREE.SphereGeometry( 3, 2, -3 ); //Diamond
   			   var material = new THREE.MeshLambertMaterial( { color:0xffffff} );
   			   var diamond = new THREE.Mesh( geometry, material );
   			   diamond.position.set( 0.6, 0, 0 );
   			   scene.add( diamond );
-  			   scene.remove( mesh );
-  			    scene.remove( mesh1 );
-  			   	render();
-  			  
+  			   scene.remove( mesh );//Remove Plane Sheet
+  			   scene.remove( mesh1 );//Remove Canvas with name
+  			   render();
 			}
 
-			var scene = new THREE.Scene();
+			var scene = new THREE.Scene(); 
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
 			
+			//lights
+			light = new THREE.DirectionalLight( 0xffffff );
+			light.position.set( 1, 1, 1 );
+			scene.add( light );
 
-			  light = new THREE.DirectionalLight( 0xffffff );
-			  light.position.set( 1, 1, 1 );
-			  scene.add( light );
+			light = new THREE.DirectionalLight( 0x002288 );
+			light.position.set( -1, -1, -1 );
+			scene.add( light );
 
-			  light = new THREE.DirectionalLight( 0x002288 );
-			  light.position.set( -1, -1, -1 );
-			  scene.add( light );
+			light = new THREE.AmbientLight( 0x222222 );
+			scene.add( light );
 
-			  light = new THREE.AmbientLight( 0x222222 );
-			  scene.add( light );
-
-
-			controls = new THREE.OrbitControls( camera );
+		     	controls = new THREE.OrbitControls( camera );  //mouse controls
     
-
-			var renderer = new THREE.WebGLRenderer();
+		     	var renderer = new THREE.WebGLRenderer();
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
 
-			
-   			var geometry = new THREE.PlaneGeometry( 6, 6, 0.2, 0.2 );
+			var geometry = new THREE.PlaneGeometry( 6, 6, 0.2, 0.2 ); //Inner plane sheet
   			var material = new THREE.MeshLambertMaterial( { color:0xffffff} );
   			var mesh = new THREE.Mesh( geometry, material );
   			mesh.position.set( 0.1, 0, 0 );
   			scene.add( mesh );
   			
-  	var canvas1 = document.createElement('canvas');
-	var context1 = canvas1.getContext('2d');
-
-	context1.font = "Bold 120px Arial";
-	context1.fillStyle = "rgba(255,255,255,0.95)";
-    context1.fillText('Aditi', 20, 110);
+  			var canvas1 = document.createElement('canvas');//Giving the sheet a texture using canvas
+			var context1 = canvas1.getContext('2d');
+			context1.font = "Bold 120px Arial";
+			context1.fillStyle = "rgba(255,255,255,0.95)";
+		    	context1.fillText('Aditi', 20, 110);
     
-	// canvas contents will be used for a texture
-	var texture1 = new THREE.Texture(canvas1) 
-	texture1.needsUpdate = true;
-    var material1 = new THREE.MeshLambertMaterial( { map: texture1, side:THREE.DoubleSide});
-    var mesh1 = new THREE.Mesh(new THREE.PlaneGeometry(5, 3), material1);
-	mesh1.position.set( 0.1, 0, 0 );
-	scene.add( mesh1 );		 
+			var texture1 = new THREE.Texture(canvas1) // Using canvas contents for texture
+			texture1.needsUpdate = true;
+		    	var material1 = new THREE.MeshLambertMaterial( { map: texture1, side:THREE.DoubleSide});
+			var mesh1 = new THREE.Mesh(new THREE.PlaneGeometry(5, 3), material1);
+			mesh1.position.set( 0.1, 0, 0 );
+			scene.add( mesh1 );		 
 	
-
-			var geometry = new THREE.SphereGeometry( 12, 0, 0 );
+			var geometry = new THREE.SphereGeometry( 12, 0, 0 ); //Sphere with Wireframe
   			var material = new THREE.MeshLambertMaterial( { color:0xffffff, wireframe: true} );
   			var sphere = new THREE.Mesh( geometry, material );
   			sphere.position.set( 1, 0, 0 );
   			scene.add( sphere );
 
-			var geometry = new THREE.TorusGeometry( 16, 2, 5,7 );
+			var geometry = new THREE.TorusGeometry( 16, 2, 5,7 ); //Yellow Ring
   			var material = new THREE.MeshLambertMaterial( { color:0xffff00} );
   			var cir = new THREE.Mesh( geometry, material );
   			sphere.position.set( 1, 0, 0 );
   			scene.add( cir );
 		
-			var geometry = new THREE.TorusGeometry( 8, 1, 4,6 );
+			var geometry = new THREE.TorusGeometry( 8, 1, 4,6 ); //Pink Ring
   			var material = new THREE.MeshLambertMaterial( { color:0xff00ff} );
   			var cir1 = new THREE.Mesh( geometry, material );
   			sphere.position.set( 1, 0, 0 );
   			scene.add( cir1 );
 				
-			var geometry = new THREE.BoxGeometry( 7, 7, 7  );
+			var geometry = new THREE.BoxGeometry( 7, 7, 7  ); //Inner cube(box) with transparency
 			var material = new THREE.MeshLambertMaterial( { color: 0x00ffff, opacity: 0.4, transparent: true} );
 			var cube = new THREE.Mesh( geometry, material );
 			scene.add( cube );
 
-
 			camera.position.z = 24;
 
-			var render = function () {
+			var render = function () 
+			{
 				requestAnimationFrame( render );
 				sphere.rotation.y += 0.02;
 				cir1.rotation.x += 0.02;
 				cir.rotation.z += 0.02;
 				renderer.render(scene, camera);
 				controls.update();
-				
 			};
-
 
 			render();
 		</script>
